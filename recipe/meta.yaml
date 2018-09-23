@@ -10,7 +10,7 @@ source:
   sha1: a49135aa73f45e135d4a27b6693e10afe597dcb6
 
 build:
-  number: 0
+  number: 1000
   script: python setup.py install
   skip: true  # [not osx]
 
