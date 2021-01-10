@@ -10,12 +10,12 @@ source:
   sha1: a49135aa73f45e135d4a27b6693e10afe597dcb6
 
 build:
-  number: 1002
+  number: 1003
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [not osx]
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
