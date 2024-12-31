@@ -6,22 +6,24 @@ package:
 
 source:
   fn: iterm2-tools-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/i/iterm2-tools/iterm2-tools-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/i/iterm2-tools/iterm2-tools-{{ version }}.tar.gz
   sha1: a49135aa73f45e135d4a27b6693e10afe597dcb6
 
 build:
   noarch: python
-  number: 1004
+  number: 1005
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - iterm2_tools
     - iterm2_tools.tests
